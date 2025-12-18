@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8" />
+  <!-- Meta viewport moderne pour activer un layout responsive sur mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mes projets en design d'interfaces interactives</title>
+
+  <!-- Styles séparés (ordre important : nav isolée puis contenu) -->
+  <link rel="stylesheet" href="mainnav.css" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- L'attribut defer évite de bloquer le rendu initial -->
+  <script defer src="mainnav.js"></script>
+</head>
+
+<body>
+  <!-- Header demandé, à la racine du body -->
+  <header id="mainnav" aria-label="Navigation principale">
+    <!-- aria-label offre une description accessible du bloc de navigation
+    Les attributs ARIA (Accessible Rich Internet Applications) donnent aux lecteurs d’écran et autres outils d’accessibilité des infos que le HTML seul ne fournit pas toujours : rôle d’un élément, état (ouvert, désactivé…), relations entre composants. 
+    -->
+    <div class="mainnav__inner">
+      <div class="mainnav__title" aria-label="Identité">
+        Aurore DUCOURTIOUX n°24005027
+      </div>
+
+      <button class="mainnav__burger" type="button" aria-label="Ouvrir le menu" aria-controls="mainnav-drawer"
+        aria-expanded="false">
+        <!-- aria-controls & aria-expanded pilotent l'état du menu burger -->
+        <span class="mainnav__burgerBars" aria-hidden="true">
+          <span class="mainnav__bar"></span>
+          <span class="mainnav__bar"></span>
+          <span class="mainnav__bar"></span>
+        </span>
+      </button>
+    </div>
+
+    <!-- Overlay + volet -->
+    <!-- data-mainnav-close + hidden servent au pilotage JS & à l'accessibilité -->
+    <div class="mainnav__overlay" data-mainnav-close tabindex="-1" hidden></div>
+
+    <aside id="mainnav-drawer" class="mainnav__drawer" aria-label="Menu" aria-hidden="true" hidden>
+      <!-- L'élément aside moderne héberge le tiroir de navigation -->
+      <div class="mainnav__drawerHeader">
+        <div class="mainnav__drawerTitle">Menu</div>
+        <button class="mainnav__close" type="button" aria-label="Fermer le menu" data-mainnav-close>
+          ✕
+        </button>
+      </div>
+
+      <nav class="mainnav__menu" aria-label="Liens">
+        <details class="mainnav__details">
+          <summary class="mainnav__summary">Accueil</summary>
+          <div class="mainnav__sub">
+            <a class="mainnav__link" href="#intro">Projets</a>
+            <a class="mainnav__link" href="#galerie">Galerie</a>
+            <a class="mainnav__link" href="#conclusion">Conclusion</a>
+          </div>
+        </details>
+
+        <a class="mainnav__link" href="projets/Intro/projet1index.html">Projet 1</a>
+        <a class="mainnav__link" href="projets/Corbeau/projet2index.html">Projet 2</a>
+        <a class="mainnav__link" href="projets/flexbox/projet3index.html">Projet 3</a>
+        <a class="mainnav__link" href="https://nuxt-starter-kit-main-awdxyumti-aurorexdtxs-projects.vercel.app/">Projet
+          4</a>
+      </nav>
+
+      <div class="mainnav__drawerFooter">
+        <small>Navigation demo</small>
+      </div>
+    </aside>
+  </header>
+
+  <!-- Contenu principal (article long, multi colonnes desktop, responsive mobile) -->
+  <!-- Élément <main> moderne pour encapsuler le contenu majeur -->
+  <main class="page" id="top">
+    <!-- Article sémantique aidé par aria-label -->
+    <article class="article" aria-label="Article principal">
+      <header class="article__header" id="intro">
+        <h1 class="article__title">Mes projets en design d'interfaces interactives</h1>
+        <p class="article__chapo">
+          Projets pédagogiques M1 CEN, Université Paris 8
+        </p>
+      </header>
+
+      <!-- Figure + figcaption constituent une paire moderne pour illustrer -->
+      <figure class="article__hero">
+        <!-- loading="lazy" diffère le chargement pour les vues hors écran -->
+        <img src="medias/prev_projet4.png" alt="Image de couverture" loading="lazy" />
+        <figcaption>Aperçu d'un de mes projets</figcaption>
+      </figure>
+
+      <!-- Section structurant chaque partie de l'article -->
+      <section class="article__body" aria-label="Texte long">
+        <h2><a href="projets/Intro/projet1index.html">Projet n°1 : les bases du HTML</a></h2>
+        <p>
+          Pour commencer, j'ai voulu revoir les bases, alors j'ai créé une toute petite page de présentation où
+          j'explique qui je suis et ce que je révise. C'était l'occasion de vérifier que je savais bien organiser mes
+          textes et mes images pour qu'ils s'affichent correctement, sans chercher à faire compliqué.
+        </p>
+
+        <h2><a href="projets/Corbeau/projet2index.html">Projet n°2 : la fable du Corbeau et le Renard</a></h2>
+        <div class="article__row article__row--right">
+          <figure class="article__float article__float--right">
+            <img src="projets/Corbeau/medias/corb.gif" alt="Illustration" loading="lazy" />
+            <figcaption>Le Renard</figcaption>
+          </figure>
+          <p>
+            Ensuite, je me suis amusée à rendre les choses plus jolies visuellement avec la fable du "Corbeau et le
+            Renard". J'ai travaillé sur l'apparence du texte, par exemple en mettant la toute première lettre en très
+            grand pour faire comme dans un vieux livre de contes, et j'ai ajouté un fond illustré ainsi qu'une petite
+            animation pour donner une ambiance sympa.
+          </p>
+        </div>
+        <h2><a href="projets/flexbox/projet3index.html">Projet n°3 : la construction d'un site classique</a></h2>
+        <div class="article__row">
+          <figure class="article__float article__float--left">
+            <img src="medias/prev_projet2.png" alt="Illustration" loading="lazy" />
+            <figcaption>Prévisualisation</figcaption>
+          </figure>
+          <p>
+            Après ça, je suis passée à la construction de l'ossature d'un site web classique. L'idée était de créer une
+            page bien rangée avec un en-tête, un pied de page et surtout un contenu central entouré de menus sur les
+            côtés, le tout s'organisant proprement pour que la page reste lisible peu importe la taille de la fenêtre.
+          </p>
+        </div>
+        <h2><a href="https://nuxt-starter-kit-main-awdxyumti-aurorexdtxs-projects.vercel.app/">Projet n°4 : une galerie
+            interactive full-stack</a></h2>
+        <p>
+          Enfin, j'ai réalisé mon plus gros projet : une galerie interactive dédiée au voyage en Chine. C'était un vrai
+          défi
+          car j'ai dû apprendre à gérer le back, la partie cachée du site, afin de sauvegarder les photos dans une base
+          de données. J'ai même créé un système intuitif pour glisser et déposer les images afin de choisir leur ordre
+          d'affichage facilement. Malgré quelques difficultés techniques au début, j'ai réussi à tout faire fonctionner
+          et à mettre le site en ligne pour que tout le monde puisse le visiter.
+        </p>
+
+        <h3 id="galerie">Galerie</h2>
+          <p>
+            Voici quelques photos souvenirs de mon voyage en Chine, pour vous donner un aperçu des paysages et de
+            l'ambiance que j'ai voulu retranscrire à travers ma galerie.
+          </p>
+
+          <div class="article__gallery" aria-label="Galerie d'images">
+            <figure class="article__card">
+              <img src="medias/zhangjiajie.jpg" alt="Image 1" loading="lazy" />
+              <figcaption>Parc de Zhangjiajie</figcaption>
+            </figure>
+            <figure class="article__card">
+              <img src="medias/furong.jpg" alt="Image 2" loading="lazy" />
+              <figcaption>Karst de Wulong</figcaption>
+            </figure>
+            <figure class="article__card">
+              <img src="medias/yiheyuan.jpg" alt="Image 3" loading="lazy" />
+              <figcaption>Palais d'Été</figcaption>
+            </figure>
+            <figure class="article__card">
+              <img src="medias/datong.jpg" alt="Image 4" loading="lazy" />
+              <figcaption>Grottes de Yungang</figcaption>
+            </figure>
+          </div>
+
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper nulla non metus auctor fringilla.
+            Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur
+            ac,
+            vestibulum at eros.
+            Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
+          </p>
+
+          <h2 id="conclusion">Conclusion</h2>
+          <p>
+            Pour finir, je dirais que cet ensemble de projets m'a permis de voir à quel point j'ai progressé en peu de
+            temps. Je suis partie de zéro avec juste du texte brut, et petit à petit, j'ai réussi à construire des
+            choses de plus en plus complexes, jusqu'à avoir un site entièrement fonctionnel. C'était parfois un
+            casse-tête, surtout pour la partie technique, mais voir le résultat final est super satisfaisant. Maintenant
+            que j'ai ces bases solides, j'ai hâte de continuer à explorer le développement web pour créer des interfaces
+            encore plus abouties.
+          </p>
+
+          <!-- <figure class="article__wide">
+            <img src="https://placehold.co/1200x520" alt="Illustration large" loading="lazy" />
+            <figcaption>Illustration large qui traverse la mise en page</figcaption>
+          </figure> !-->
+
+      </section>
+      <footer class="article__footer">
+        <a class="article__backTop" href="#top">Retour en haut</a>
+      </footer>
+    </article>
+  </main>
+</body>
+
+</html>

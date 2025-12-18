@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Corbeau et le Renard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../mainnav.css" />
+    <script defer src="../../mainnav.js"></script>
+</head>
+
+<body>
+    <header id="mainnav" aria-label="Navigation principale">
+        <div class="mainnav__inner">
+            <div class="mainnav__title" aria-label="Identité">
+                Aurore DUCOURTIOUX n°24005027
+            </div>
+
+            <button class="mainnav__burger" type="button" aria-label="Ouvrir le menu" aria-controls="mainnav-drawer"
+                aria-expanded="false">
+                <span class="mainnav__burgerBars" aria-hidden="true">
+                    <span class="mainnav__bar"></span>
+                    <span class="mainnav__bar"></span>
+                    <span class="mainnav__bar"></span>
+                </span>
+            </button>
+        </div>
+
+        <div class="mainnav__overlay" data-mainnav-close tabindex="-1" hidden></div>
+
+        <aside id="mainnav-drawer" class="mainnav__drawer" aria-label="Menu" aria-hidden="true" hidden>
+            <div class="mainnav__drawerHeader">
+                <div class="mainnav__drawerTitle">Menu</div>
+                <button class="mainnav__close" type="button" aria-label="Fermer le menu" data-mainnav-close>
+                    ✕
+                </button>
+            </div>
+
+            <nav class="mainnav__menu" aria-label="Liens">
+                <details class="mainnav__details">
+                    <summary class="mainnav__summary"><a class="mainnav__link" href="../../index.html">Accueil</a></summary>
+                    <div class="mainnav__sub">
+                        <a class="mainnav__link" href="../../index.html#intro">Projets</a>
+                        <a class="mainnav__link" href="../../index.html#galerie">Galerie</a>
+                        <a class="mainnav__link" href="../../index.html#conclusion">Conclusion</a>
+                    </div>
+                </details>
+
+                <a class="mainnav__link" href="../Intro/projet1index.html">Projet 1</a>
+                <a class="mainnav__link" href="../Corbeau/projet2index.html">Projet 2</a>
+                <a class="mainnav__link" href="../flexbox/projet3index.html">Projet 3</a>
+                <a class="mainnav__link"
+                    href="https://nuxt-starter-kit-main-awdxyumti-aurorexdtxs-projects.vercel.app/">Projet 4</a>
+            </nav>
+
+            <div class="mainnav__drawerFooter">
+                <small>Navigation demo</small>
+            </div>
+        </aside>
+    </header>
+    <img src="medias/corb.gif" alt="Timbre">
+    <h1>Le Corbeau et le Renard</h1>
+    <div id="poeme">
+        <p>
+            <span id="lettrine">M</span>aître Corbeau, sur un arbre perché,<br>
+            Tenait en son bec un fromage.<br>
+            Maître Renard, par l'odeur alléché,<br>
+            Lui tint à peu près ce langage :<br>
+            "Hé ! bonjour, Monsieur du Corbeau.<br>
+            Que vous êtes joli ! que vous me semblez beau !<br>
+            Sans mentir, si votre ramage<br>
+            Se rapporte à votre plumage,<br>
+            Vous êtes le Phénix des hôtes de ces bois."<br>
+            À ces mots le Corbeau ne se sent pas de joie ;<br>
+            Et pour montrer sa belle voix,<br>
+            Il ouvre un large bec, laisse tomber sa proie.<br>
+            Le Renard s'en saisit, et dit :<br>
+            "Mon bon Monsieur, apprenez que tout flatteur<br>
+            Vit aux dépens de celui qui l'écoute :<br>
+            Cette leçon vaut bien un fromage, sans doute."<br>
+            Le Corbeau, honteux et confus,<br>
+            Jura, mais un peu tard, qu'on ne l'y prendrait plus.
+        </p>
+    </div>
+</body>
+
+</html>

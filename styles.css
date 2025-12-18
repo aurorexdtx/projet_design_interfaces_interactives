@@ -1,0 +1,320 @@
+/* ========================= styles.css =========================
+   Styles du contenu principal UNIQUEMENT
+*/
+
+:root {
+  --page-max: 1040px;
+  --text: #2c1a1b;
+  --muted: #8c6b6b;
+  --bg: #4a0e12;
+  --paper: #fdf8f0;
+  --border: rgba(74, 14, 18, 0.15);
+  --shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+  --accent: #4a0e12;
+  /* Rouge sombre */
+  --accent-light: #9e7f7f;
+  /* Rouge délavé pour le hover */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+.page {
+  width: min(100% - 32px, var(--page-max));
+  margin: 0 auto;
+  padding: 96px 0 72px;
+}
+
+.article {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 0px;
+  box-shadow: var(--shadow);
+  overflow: clip;
+}
+
+.article__header {
+  padding: 48px 28px 24px;
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+}
+
+/* Titre principal (H1) réduit */
+.article__title {
+  margin: 0;
+  font-size: clamp(1.8rem, 2.5vw + 1rem, 2.8rem);
+  /* Beaucoup plus petit */
+  letter-spacing: -0.02em;
+  font-family: Didot, "Bodoni MT", "Times New Roman", serif;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.article__chapo {
+  margin: 24px auto 0;
+  color: var(--muted);
+  line-height: 1.6;
+  max-width: 72ch;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+  /* Légèrement réduit */
+}
+
+.article__hero {
+  margin: 0;
+}
+
+.article__hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 5px solid var(--border);
+}
+
+.article__hero figcaption {
+  padding: 10px 28px 18px;
+  color: var(--muted);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: left;
+}
+
+.article__body {
+  padding: 0 28px 28px;
+  line-height: 1.75;
+  font-size: 1rem;
+}
+
+/* Styles des liens DANS le texte (pour H2 a, p a, etc.) */
+.article__body a {
+  color: var(--accent);
+  text-decoration: none;
+  /* Enlève le soulignement par défaut */
+  transition: color 0.2s ease;
+  font-weight: 500;
+}
+
+/* Au hover, le texte devient "plus clair" (plus délavé) */
+.article__body a:hover {
+  color: var(--accent-light);
+}
+
+/* Titres de section (H2) réduits */
+.article__body h2 {
+  margin: 48px 0 24px;
+  font-size: 1.4rem;
+  /* Réduit (était 2rem) */
+  letter-spacing: 0em;
+  font-family: Didot, "Bodoni MT", "Times New Roman", serif;
+  text-transform: uppercase;
+  color: var(--accent);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 12px;
+}
+
+/* Sous-titres (H3) réduits */
+.article__body h3 {
+  font-family: Didot, "Bodoni MT", "Times New Roman", serif;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-size: 1.1rem;
+  /* Réduit (était 1.5rem) */
+  margin-top: 36px;
+}
+
+.article__body p {
+  margin: 0 0 16px;
+  max-width: 80ch;
+}
+
+.article__float {
+  margin: 10px 0 14px;
+  width: min(320px, 45%);
+  border-radius: 0px;
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.10);
+}
+
+.article__float img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.article__float figcaption {
+  padding: 10px 12px;
+  font-size: 0.75rem;
+  color: var(--muted);
+  background: rgba(74, 14, 18, 0.03);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.article__float--right {
+  float: right;
+  margin-left: 24px;
+}
+
+.article__float--left {
+  float: left;
+  margin-right: 24px;
+}
+
+.article__wide {
+  margin: 36px 0 36px;
+  border-radius: 0px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.article__wide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.article__wide figcaption {
+  padding: 10px 12px;
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.article__gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin: 24px 0 36px;
+}
+
+.article__card {
+  margin: 0;
+  border-radius: 0px;
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
+}
+
+.article__card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.article__card figcaption {
+  padding: 12px 12px;
+  color: var(--muted);
+  font-size: 0.75rem;
+  background: rgba(74, 14, 18, 0.03);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+.article__footer {
+  padding: 36px 28px 48px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.article__backTop {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--accent);
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 0px;
+  border: 1px solid var(--accent);
+  background: transparent;
+  transition: all 160ms ease;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+}
+
+.article__backTop:hover {
+  background: var(--accent);
+  color: var(--paper);
+}
+
+.article__row {
+  display: flex;
+  gap: 24px;
+  margin: 24px 0;
+  align-items: stretch;
+}
+
+.article__row--right {
+  flex-direction: row-reverse;
+}
+
+.article__row .article__float {
+  float: none;
+  margin: 0;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.article__row .article__float img {
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Media Queries */
+@media (min-width: 980px) {
+  .article__body {
+    column-count: 2;
+    column-gap: 48px;
+    column-rule: 1px solid rgba(74, 14, 18, 0.1);
+  }
+
+  .article__body h2,
+  .article__wide,
+  .article__gallery,
+  .article__hero,
+  .article__float {
+    break-inside: avoid;
+  }
+}
+
+@media (max-width: 720px) {
+  .page {
+    padding-top: 88px;
+  }
+
+  .article__header,
+  .article__hero figcaption,
+  .article__body,
+  .article__footer {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .article__float {
+    float: none;
+    width: 100%;
+    margin: 12px 0 14px;
+  }
+
+  .article__gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .article__row {
+    flex-direction: column;
+  }
+}
