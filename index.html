@@ -57,6 +57,7 @@
             <a class="mainnav__link" href="#intro">Projets</a>
             <a class="mainnav__link" href="#galerie">Galerie</a>
             <a class="mainnav__link" href="#conclusion">Conclusion</a>
+            <a class="mainnav__link" href="#contact">Contact</a>
           </div>
         </details>
 
@@ -186,6 +187,49 @@
           </figure> !-->
 
       </section>
+
+      <section class="contact-section" id="contact" aria-label="Formulaire de contact">
+        <h2 class="contact__title">Contactez-moi</h2>
+
+        <form class="contact__form" action="#" method="post">
+
+          <fieldset class="contact__fieldset">
+            <legend class="contact__legend">Vos coordonnées</legend>
+            <div class="contact__grid">
+
+              <label for="nom">Nom :*</label>
+              <input type="text" id="nom" name="nom" placeholder="nom" required>
+
+              <label for="prenom">Prénom :*</label>
+              <input type="text" id="prenom" name="prenom" placeholder="prénom" required>
+
+              <label for="tel">Téléphone :*</label>
+              <input type="tel" id="tel" name="tel" placeholder="votre téléphone" required>
+
+              <label for="email">Email :*</label>
+              <input type="email" id="email" name="email" placeholder="email" required>
+
+              <label for="objet">Objet :*</label>
+              <input type="text" id="objet" name="objet" placeholder="objet" required>
+
+            </div>
+          </fieldset>
+
+          <fieldset class="contact__fieldset">
+            <legend class="contact__legend">Votre message</legend>
+            <textarea id="message" name="message" placeholder="message" rows="6" required></textarea>
+          </fieldset>
+
+          <p class="contact__note">* Tous les champs sont obligatoires</p>
+
+          <div class="contact__actions">
+            <button type="reset" class="contact__btn">Effacer</button>
+            <button type="submit" class="contact__btn">Envoyer</button>
+          </div>
+
+        </form>
+      </section>
+
       <footer class="article__footer">
         <a class="article__backTop" href="#top">Retour en haut</a>
       </footer>
